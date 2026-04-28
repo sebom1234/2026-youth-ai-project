@@ -55,7 +55,7 @@ def respond(message, history):
     except Exception as e:
         return f"❌ 오류: {e}"
 
-with gr.Blocks(theme=gr.themes.Soft()) as demo:
+with gr.Blocks() as demo:
     gr.ChatInterface(
         respond, title=f"🤖 {BOT_NAME}",
         description=f"안녕! 나는 {BOT_NAME}이야. 무엇이든 물어봐!",
@@ -63,4 +63,4 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
     )
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())

@@ -59,7 +59,7 @@ def answer(question, history):
     return r.choices[0].message.content
 
 init_db()
-demo = gr.ChatInterface(answer, title=f"🏫 {SCHOOL_NAME} AI 도우미", examples=["오늘 급식 뭐야?", "동아리 언제 해?"], type="messages", theme=gr.themes.Soft())
+demo = gr.ChatInterface(answer, title=f"🏫 {SCHOOL_NAME} AI 도우미", examples=["오늘 급식 뭐야?", "동아리 언제 해?"])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())

@@ -86,7 +86,7 @@ def on_new(diff):
     game.reset(diff)
     return f"🎮 새 게임! (난이도: {diff})", "아직 시도 없음", ""
 
-with gr.Blocks(title="🧩 꼬맨틀", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="🧩 꼬맨틀") as demo:
     gr.Markdown("# 🧩 꼬맨틀 (Semantle Clone)\n정답 단어를 맞춰보세요!")
     with gr.Row():
         with gr.Column(scale=2):
@@ -104,4 +104,4 @@ with gr.Blocks(title="🧩 꼬맨틀", theme=gr.themes.Soft()) as demo:
     new_btn.click(on_new, [diff], [result, history, word_input])
 
 if __name__ == "__main__":
-    demo.launch(server_name="0.0.0.0", server_port=7860)
+    demo.launch(server_name="0.0.0.0", server_port=7860, theme=gr.themes.Soft())
